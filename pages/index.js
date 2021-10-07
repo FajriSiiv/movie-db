@@ -20,7 +20,7 @@ export default function Home({}) {
       .catch(err => console.log(err));
   }
   function Tampiltampung(tampung) {
-    return tampung.map(movie => <div>{movie.Title}</div>);
+    return tampung.map(movie => <div key={movie.imdbID}>{movie.Title}</div>);
   }
   return (
     <div className={styles.container}>
@@ -34,6 +34,7 @@ export default function Home({}) {
         <Link href="route">
           <a>Route</a>
         </Link>
+        <hr />
         <input type="text" onChange={e => setCari(e.target.value)} />
         <button onClick={handleClick}>Click</button>
         <br />
